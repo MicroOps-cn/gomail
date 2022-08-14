@@ -103,6 +103,11 @@ func (m *Message) SetHeader(field string, value ...string) {
 	m.header[field] = value
 }
 
+// SetNativeHeader sets a value to the given header field.
+func (m *Message) SetNativeHeader(field string, value ...string) {
+	m.header[field] = value
+}
+
 func (m *Message) encodeHeader(values []string) {
 	for i := range values {
 		values[i] = m.encodeString(values[i])
